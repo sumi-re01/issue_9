@@ -30,4 +30,13 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
+
+
+
+  # チャット機能
+
+  has_many :user_rooms
+  has_many :chats
+  has_many :rooms, through: :user_rooms
+
 end
